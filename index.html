@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Moof</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+        <link rel="shortcut icon" href="dynamic_assets/fav.png" type="image/x-icon"> 
+        <link href="app.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+        <!-- <link rel="stylesheet" type="text/css" href="legals.css" /> -->
+        <!-- <script type="text/javascript" src="http://s0.2mdn.net/ads/studio/Enabler.js"></script> -->
+        <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+        <script type="text/javascript" src="https://code.createjs.com/createjs-2015.05.21.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+
+    <body>
+        <div id="container">           
+            <canvas id="main"></canvas>
+
+                <div id="preloader" class="preloader">
+                  <div class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-teal-only">
+                          <div class="circle-clipper left">
+                                <div class="circle"></div>
+                          </div><div class="gap-patch">
+                                <div class="circle"></div>
+                          </div><div class="circle-clipper right">
+                                <div class="circle"></div>
+                          </div>
+                    </div>
+                  </div>
+                     
+            </div>
+            <div id= "progress" class="progress">
+                        <div id="determinate" class="determinate" style="width: 100%"></div>
+                    </div>
+            <div id="bg-exit"></div>
+            <div id="legalsButton"></div>
+            <div id="legalsContainer">
+                <div id="legalsCopy"></div>
+                <!-- <div id="legalsClose">X</div> -->
+            <!-- </div> -->
+            <p style="position:absolute; left:-999px">
+                <span class="light" style="color:#ffffff;">Produced</span>
+                <span class="regular" style="color:#ffffff">by</span>
+                <span class="medium" style="color:#ffffff;">Alpic</span>
+                <span class="bold" style="color:#ffffff;">Bros</span>
+            </p>
+        </div>
+        
+    </body>
+</html>
