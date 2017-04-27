@@ -1,5 +1,5 @@
 
-var advert, preloader, progress, progressBar;
+var advert, preloader, progress, progressBar, counter;
 
 window.onload = function() {
 	canvas = document.getElementById('main');
@@ -135,12 +135,9 @@ function ProgressBar(){
 	console.log('progress');
 	progress = document.getElementById('progress');
 	progressBar = document.getElementById('determinate');
-
-	// var outerWidth = document.getElementById('main').offsetWidth;
-	// var outerHeight = document.getElementById('main').offsetHeight;
 	setTimeout(function(){
 		progress.style.top = '70px';
-		// progressBar.style.width = '70%';
+		
 	},1000)
 	
 }
@@ -164,7 +161,8 @@ function Frame01(stage, assets) {
 		stage.addChild(cta);
 		
 		// createjs.Tween.get(cta).to({alpha: 1},500).wait(300).to({ y: cta.y - 20 },250).to({y: cta.y},250);;
-		createjs.Tween.get(cta).to({alpha: 1},500).wait(300).to({ y: cta.y - 50 },250, createjs.Ease.circIn).to({y: cta.y},250, createjs.Ease.circOut);;
+		createjs.Tween.get(cta).to({alpha: 1},400).wait(300).to({ y: cta.y - 50 },250, createjs.Ease.circIn).to({y: cta.y},250, createjs.Ease.circOut);
+
 		
 		TweenLite.delayedCall(26, function(){
 			animationComplete();
@@ -175,7 +173,8 @@ function Frame01(stage, assets) {
 	// var firstPosX = cta.x;
 	// var firstPosY = cta.y;
 
-		var startX,startY;
+		var startX, startY;
+		counter = 0;
 		//$('#main').mousedown(function(e){
 		$('#main').bind("mousedown touchstart", function(e){
 			console.log(e.type=='touchstart');
@@ -211,11 +210,15 @@ function Frame01(stage, assets) {
     	  console.log("Top: " + cta.x + " Left: " + cta.y);
 
 		  if(deltaY<0){
-		  	createjs.Tween.get(cta).wait(100).to({x:deltaX + cta.x, y:deltaY*0.5 + cta.y},createjs.Ease.cubicInOut(5));
-		  
+		  	createjs.Tween.get(cta).wait(100).to({x:(deltaX + cta.x), y:(deltaY*0.5 + cta.y)},createjs.Ease.cubicInOut(5));
+		  	counter += 2;
+		  	console.log('counter: ' + counter);
+		  	progressBar.style.width = 100 - counter + '%';
 		  }else{
-		  	createjs.Tween.get(cta).wait(100).to({x:deltaX + cta.x, y:deltaY*1.25 + cta.y},createjs.Ease.cubicInOut(5));
-			
+		  	createjs.Tween.get(cta).wait(100).to({x:(deltaX + cta.x), y:(deltaY*1.25 + cta.y)},createjs.Ease.cubicInOut(5));
+			counter += 1;
+		  	console.log('counter: ' + counter);
+		  	progressBar.style.width = 100 - counter + '%';
 		  }
 		})
 }
