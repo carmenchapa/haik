@@ -32,12 +32,22 @@ html, body {
     padding: 0;
 }
 
+body.noScroll { /* ...or body.dialogShowing */
+  overflow: hidden;
+}
+
+#main.noScroll { /* ...or body.dialogShowing */
+  overflow: hidden;
+}
+
 canvas {
     position: absolute;
     top: 0;
     left: 0;
 }
-
+#text{
+    display: none;
+}
 #container {
     position: relative;
 /*  width: 300px;
@@ -173,6 +183,15 @@ strong, b {
 #progress{
     width:80%;
     margin: auto;
+}
+
+#cta{
+    position: relative;
+    /*margin: auto;*/
+    background-image: url('../assets/cta.png');
+    width: 100px;
+    height: 104px;
+    /*top:200px;*/
 }
 
 
