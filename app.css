@@ -188,7 +188,7 @@ strong, b {
 #cta{
     position: relative;
     /*margin: auto;*/
-    background-image: url('../assets/cta.png');
+    background-image: url('assets/cta.png');
     width: 100px;
     height: 104px;
     /*top:200px;*/
